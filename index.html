@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Money Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app">
+    <header class="ringkasan">
+      <h1>Money Management</h1>
+      <p id="sapaan">Halo</p>
+      <p id="status">Belum diterima</p>
+      <div class="total" id="total">Rp 0</div>
+      <p id="info"></p>
+    </header>
+
+    <main>
+      <h2>Proyek</h2>
+      <div id="daftar"></div>
+
+      <h2>Transaksi terakhir</h2>
+      <div id="daftar-transaksi"></div>
+      <p id="kosong-transaksi" class="kosong">Belum ada transaksi. Tekan + untuk menambah.</p>
+    </main>
+
+    <nav>
+      <button class="aktif">Proyek</button>
+      <button class="tambah" aria-label="Tambah transaksi baru" onclick="tambahTransaksi()">+</button>
+    </nav>
+  </div>
+
+  <dialog id="dialog-transaksi">
+    <form id="form-transaksi">
+      <h2>Tambah transaksi</h2>
+
+      <label for="tanggal">Tanggal</label>
+      <input type="date" id="tanggal" required>
+
+      <label for="jenis">Jenis</label>
+      <select id="jenis">
+        <option value="pemasukan">Pemasukan</option>
+        <option value="pengeluaran">Pengeluaran</option>
+      </select>
+
+      <label for="kategori">Kategori</label>
+      <select id="kategori" required></select>
+
+      <label for="nominal">Nominal (Rp)</label>
+      <input type="number" id="nominal" min="1" step="1" inputmode="numeric" placeholder="0" required>
+
+      <label for="catatan">Catatan</label>
+      <textarea id="catatan" rows="2" placeholder="Opsional"></textarea>
+
+      <div class="aksi-form">
+        <button type="button" class="btn-batal" onclick="tutupTransaksi()">Batal</button>
+        <button type="submit" class="btn-simpan">Simpan</button>
+      </div>
+    </form>
+  </dialog>
+
+  <template id="tpl-proyek">
+    <div class="proyek">
+      <div class="baris">
+        <div>
+          <div class="nama"></div>
+          <div class="klien"></div>
+        </div>
+        <div>
+          <div class="nominal"></div>
+          <div class="status"></div>
+        </div>
+      </div>
+      <div class="aksi-proyek">
+        <button class="btn-pengingat">Kirim Pengingat</button>
+        <button class="btn-hapus">Hapus</button>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-transaksi">
+    <div class="transaksi">
+      <div>
+        <div class="kategori"></div>
+        <div class="info"></div>
+      </div>
+      <div class="jumlah"></div>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
