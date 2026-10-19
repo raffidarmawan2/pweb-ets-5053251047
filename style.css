@@ -10,6 +10,7 @@
   --lunas: #0F5C4D;
 }
 
+
 * { box-sizing: border-box; }
 body {
   margin: 0;
@@ -52,13 +53,13 @@ main h2 { margin: 0; font-size: 16px; }
 .lunas { opacity: .85; }
 
 .btn-pengingat {
-  min-height: 44px;
+  height: 44px;
+  width: 44px;
   border: 0;
   border-radius: 10px;
   background: var(--terlambat);
   color: #fff;
   font-size: 15px;
-  font-weight: 600;
 }
 
 nav {
@@ -134,7 +135,7 @@ dialog input, dialog select, dialog textarea {
   border: 0;
   border-radius: 10px;
   background: lab(94.95% 0.67 0.23);
-  
+  font-size: 15px;
 }
 .aksi-proyek .btn-hapus:only-child { margin-left: auto; }
 

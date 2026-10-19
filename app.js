@@ -60,6 +60,13 @@ function tambahTransaksi() {
   $("dialog-transaksi").showModal();
 }
 
+function hapusProyek(i) {
+    if (confirm("Apakah anda yakin mau menghapus proyek " + proyek[i].nama + "?")) {
+        proyek.splice(i, 1);
+        tampilkan();
+    }
+}
+
 function tutupTransaksi() {
   $("dialog-transaksi").close();
 }
